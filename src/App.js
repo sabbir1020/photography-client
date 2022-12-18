@@ -20,6 +20,7 @@ function App() {
         {
           path: "/services",
           element: <Services></Services>,
+          loader: () => fetch("http://localhost:5000/services"),
         },
         {
           path: "/blogs",
