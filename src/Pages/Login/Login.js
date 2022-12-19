@@ -86,7 +86,7 @@ const Login = () => {
               <button className="btn btn-primary">Login</button>
             </div>
           </form>
-          <div>
+          <div className="text-center">
             <button onClick={handleGoogleSign} className="btn btn-primary mb-5">
               <FaGoogle></FaGoogle>
             </button>

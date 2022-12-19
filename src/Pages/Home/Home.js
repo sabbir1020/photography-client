@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       <BanarCarousel></BanarCarousel>
-      <div className="mt-3 mb-3">
+      <div className="mt-3 mb-3 text-center">
         <Link to="/services">
           <button className="btn btn-outline btn-primary">See More</button>
         </Link>

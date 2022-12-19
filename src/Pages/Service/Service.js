@@ -20,7 +20,9 @@ const Service = ({ service }) => {
         </p>
         <div className="card-actions justify-around ">
           <p className="text-xl">Price: {servicePrice}</p>
-          <button className="btn btn-primary">View Details</button>
+          <Link to={`/serviceDetails/${_id}`}>
+            <button className="btn btn-primary">View Details</button>
+          </Link>
         </div>
       </div>
     </div>
