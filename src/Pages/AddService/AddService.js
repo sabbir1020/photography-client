@@ -12,7 +12,15 @@ const AddService = () => {
         "content-type": "application/json",
       },
       body: JSON.stringify(user),
-    });
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          alert("order placed successfully");
+        }
+      })
+      .catch((er) => console.error(er));
   };
   const handleInputBlur = (event) => {
     const field = event.target.name;

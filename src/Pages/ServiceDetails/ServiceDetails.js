@@ -13,6 +13,13 @@ const ServiceDetails = () => {
   const handleAddService = (event) => {
     event.preventDefault();
     console.log(users);
+    fetch("http://localhost:5000/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(users),
+    });
   };
   const handleInputBlur = (event) => {
     const field = event.target.name;

@@ -10,6 +10,7 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import AddService from "./Pages/AddService/AddService";
 import ServiceDetails from "./Pages/ServiceDetails/ServiceDetails";
+import ServiceReview from "./Pages/ServiceReview/ServiceReview";
 
 function App() {
   const router = createBrowserRouter([
@@ -43,6 +44,11 @@ function App() {
         {
           path: "/addService",
           element: <AddService></AddService>,
+        },
+        {
+          path: "/serviceReview",
+          element: <ServiceReview></ServiceReview>,
+          loader: () => fetch("http://localhost:5000/reviews"),
         },
         {
           path: "/blogs",
