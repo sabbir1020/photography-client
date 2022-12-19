@@ -7,21 +7,21 @@ const ServiceReview = () => {
 
   console.log(reviews);
   return (
-    <div className="overflow-x-auto w-full">
-      <table className="table w-full">
-        <thead>
+    <div className="overflow-x-auto ">
+      <table className="table ">
+        {/* <thead>
           <tr>
-            {/* <th>
+            <th>
               <label>
                 <input type="checkbox" className="checkbox" />
               </label>
-            </th> */}
+            </th>
             <th>Name</th>
             <th>Message</th>
             <th>Rating</th>
             <th></th>
           </tr>
-        </thead>
+        </thead> */}
         <tbody>
           {reviews.map((review) => (
             <ServiceReviewRaw

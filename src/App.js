@@ -11,6 +11,7 @@ import Register from "./Pages/Register/Register";
 import AddService from "./Pages/AddService/AddService";
 import ServiceDetails from "./Pages/ServiceDetails/ServiceDetails";
 import ServiceReview from "./Pages/ServiceReview/ServiceReview";
+import PrivateRouter from "./Router/PrivateRouter/PrivateRouter";
 
 function App() {
   const router = createBrowserRouter([
@@ -47,7 +48,11 @@ function App() {
         },
         {
           path: "/serviceReview",
-          element: <ServiceReview></ServiceReview>,
+          element: (
+            <PrivateRouter>
+              <ServiceReview></ServiceReview>
+            </PrivateRouter>
+          ),
           loader: () => fetch("http://localhost:5000/reviews"),
         },
         {

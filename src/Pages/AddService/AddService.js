@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const AddService = () => {
   const [user, setUser] = useState({});
   const handleAddService = (event) => {
+    const form = event.target;
     event.preventDefault();
     console.log(user);
 
@@ -17,7 +18,8 @@ const AddService = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
-          alert("order placed successfully");
+          alert("service placed successfully");
+          form.reset();
         }
       })
       .catch((er) => console.error(er));
@@ -28,6 +30,7 @@ const AddService = () => {
     const newUser = { ...user };
     newUser[field] = value;
     setUser(newUser);
+    // newUser.reset();
   };
   return (
     <div>

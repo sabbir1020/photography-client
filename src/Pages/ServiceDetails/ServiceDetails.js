@@ -12,6 +12,7 @@ const ServiceDetails = () => {
   console.log(service);
   const handleAddService = (event) => {
     event.preventDefault();
+    const form = event.target;
     console.log(users);
     fetch("http://localhost:5000/reviews", {
       method: "POST",
@@ -19,7 +20,15 @@ const ServiceDetails = () => {
         "content-type": "application/json",
       },
       body: JSON.stringify(users),
-    });
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          alert("Review added Successfully");
+          form.reset();
+        }
+      });
   };
   const handleInputBlur = (event) => {
     const field = event.target.name;
