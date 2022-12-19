@@ -43,7 +43,9 @@ const Header = () => {
             <li>
               <Link to="/blogs">Blogs</Link>
             </li>
-
+            <li>
+              <Link to="/addService">Add Service</Link>
+            </li>
             {user?.uid ? (
               <li>
                 <Link onClick={handleLogOut}>LogOut</Link>
@@ -72,6 +74,9 @@ const Header = () => {
           </li>
           <li>
             <Link to="/blogs">Blogs</Link>
+          </li>
+          <li>
+            <Link to="/addService">Add Service</Link>
           </li>
           <li>
             <Link to="/about">About</Link>

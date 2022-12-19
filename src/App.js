@@ -8,6 +8,7 @@ import NotFound from "./Pages/NotFound/NotFound";
 import Blogs from "./Pages/Blogs/Blogs";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
+import AddService from "./Pages/AddService/AddService";
 
 function App() {
   const router = createBrowserRouter([
@@ -33,6 +34,10 @@ function App() {
           element: <Register></Register>,
         },
         {
+          path: "/addService",
+          element: <AddService></AddService>,
+        },
+        {
           path: "/blogs",
           element: <Blogs></Blogs>,
         },
@@ -44,7 +49,7 @@ function App() {
     },
   ]);
   return (
-    <div className="App">
+    <div className="">
       <RouterProvider router={router}></RouterProvider>
     </div>
   );
