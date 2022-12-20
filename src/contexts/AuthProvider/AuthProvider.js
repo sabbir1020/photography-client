@@ -32,17 +32,19 @@ const AuthProvider = ({ children }) => {
 
   //   google sign In
   const googleSignIn = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
   //  logOut
   const logOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log(currentUser);
       setUser(currentUser);
+      setLoading(false);
     });
     return () => {
       return unsubscribe();
