@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import logo from "../../../assets/logo/logo.jpg";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -43,16 +44,19 @@ const Header = () => {
             <li>
               <Link to="/blogs">Blogs</Link>
             </li>
-            <li>
-              <Link to="/addService">Add Service</Link>
-            </li>
-            <li>
-              <Link to="/serviceReview">Service Reviews</Link>
-            </li>
+
             {user?.uid ? (
-              <li>
-                <Link onClick={handleLogOut}>LogOut</Link>
-              </li>
+              <>
+                <li>
+                  <Link to="/addService">Add Service</Link>
+                </li>
+                <li>
+                  <Link to="/serviceReview">Service Reviews</Link>
+                </li>
+                <li>
+                  <Link onClick={handleLogOut}>LogOut</Link>
+                </li>
+              </>
             ) : (
               <>
                 <li>
@@ -65,7 +69,10 @@ const Header = () => {
             )}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <div className="flex ">
+          <img className="h-11 w-11" src={logo} alt="" />
+          <a className="btn btn-ghost normal-case text-xl">Gazi Photography</a>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -78,17 +85,19 @@ const Header = () => {
           <li>
             <Link to="/blogs">Blogs</Link>
           </li>
-          <li>
-            <Link to="/addService">Add Service</Link>
-          </li>
-          <li>
-            <Link to="/serviceReview">Service Reviews</Link>
-          </li>
 
           {user?.uid ? (
-            <li>
-              <Link onClick={handleLogOut}>LogOut</Link>
-            </li>
+            <>
+              <li>
+                <Link to="/addService">Add Service</Link>
+              </li>
+              <li>
+                <Link to="/serviceReview">Service Reviews</Link>
+              </li>
+              <li>
+                <Link onClick={handleLogOut}>LogOut</Link>
+              </li>
+            </>
           ) : (
             <>
               <li>

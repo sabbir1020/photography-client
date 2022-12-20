@@ -1,7 +1,7 @@
 import React from "react";
 
-const ServiceReviewRaw = ({ review }) => {
-  const { name, PhotoURL, ReviewRating, message } = review;
+const ServiceReviewRaw = ({ review, handleDelete }) => {
+  const { _id, name, PhotoURL, ReviewRating, message } = review;
   return (
     <div>
       <tr>
@@ -31,7 +31,12 @@ const ServiceReviewRaw = ({ review }) => {
         </td>
         <td>{ReviewRating}</td>
         <th>
-          <button className="btn btn-ghost btn-xs">Delete</button>
+          <button
+            onClick={() => handleDelete(_id)}
+            className="btn btn-ghost btn-xs"
+          >
+            Delete
+          </button>
         </th>
       </tr>
     </div>

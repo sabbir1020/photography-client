@@ -35,14 +35,14 @@ const Register = () => {
     <div className="hero  bg-base-200">
       <div className="hero-content flex-col lg:flex-row">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl text-center lg:text-center font-bold">
-            Register now!
-          </h1>
           <p className="py-6">
             <img src={img} alt="" />
           </p>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <h1 className="text-3xl mt-2 text-center lg:text-center font-bold">
+            Register now!
+          </h1>
           <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">
               <label className="label">

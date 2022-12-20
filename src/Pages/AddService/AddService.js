@@ -7,7 +7,7 @@ const AddService = () => {
     event.preventDefault();
     console.log(user);
 
-    fetch("http://localhost:5000/services", {
+    fetch("https://photography-server-jade.vercel.app/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",

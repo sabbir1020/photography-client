@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import BanarCarousel from "./BanarCarousel/BanarCarousel";
+import Photography from "./Photography/Photography";
+import Subscribe from "./Subscribe/Subscribe";
 
 const Home = () => {
   return (
@@ -12,6 +14,8 @@ const Home = () => {
           <button className="btn btn-outline btn-primary">See More</button>
         </Link>
       </div>
+      <Photography></Photography>
+      <Subscribe></Subscribe>
     </div>
   );
 };

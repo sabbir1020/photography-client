@@ -26,13 +26,16 @@ function App() {
         {
           path: "/services",
           element: <Services></Services>,
-          loader: () => fetch("http://localhost:5000/services"),
+          loader: () =>
+            fetch("https://photography-server-jade.vercel.app/services"),
         },
         {
           path: "/serviceDetails/:id",
           element: <ServiceDetails></ServiceDetails>,
           loader: ({ params }) =>
-            fetch(`http://localhost:5000/services/${params.id}`),
+            fetch(
+              `https://photography-server-jade.vercel.app/services/${params.id}`
+            ),
         },
         {
           path: "/login",
@@ -53,7 +56,8 @@ function App() {
               <ServiceReview></ServiceReview>
             </PrivateRouter>
           ),
-          loader: () => fetch("http://localhost:5000/reviews"),
+          loader: () =>
+            fetch("https://photography-server-jade.vercel.app/reviews"),
         },
         {
           path: "/blogs",
