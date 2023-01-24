@@ -5,11 +5,6 @@ const ServiceReviewRaw = ({ review, handleDelete }) => {
   return (
     <div>
       <tr>
-        {/* <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th> */}
         <td>
           <div className="flex items-center space-x-3">
             <div className="avatar">
@@ -25,9 +20,6 @@ const ServiceReviewRaw = ({ review, handleDelete }) => {
         </td>
         <td>
           {message} <br />
-          {/* <span className="badge badge-ghost badge-sm">
-            Desktop Support Technician
-          </span> */}
         </td>
         <td>{ReviewRating}</td>
         <th>

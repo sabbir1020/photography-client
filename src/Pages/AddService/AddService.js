@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-hot-toast";
 
 const AddService = () => {
   const [user, setUser] = useState({});
@@ -18,7 +19,7 @@ const AddService = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
-          alert("service placed successfully");
+          toast.success("service placed successfully");
           form.reset();
         }
       })

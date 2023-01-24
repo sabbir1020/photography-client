@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { toast } from "react-hot-toast";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
@@ -25,7 +26,7 @@ const ServiceDetails = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
-          alert("Review added Successfully");
+          toast.success("Review added Successfully");
           form.reset();
         }
       });
@@ -133,7 +134,7 @@ const ServiceDetails = () => {
         ) : (
           <>
             <h1 className="text-3xl text-center">
-              Please Login to add a review{" "}
+              Please Login to add a review
               <Link className="text-blue-800" to="/login">
                 <button>login</button>
               </Link>

@@ -1,12 +1,16 @@
-import React from "react";
+import { useQuery } from "@tanstack/react-query";
+import React, { useContext } from "react";
+import { toast } from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import ServiceReviewRaw from "./ServiceReviewRaw";
 
 const ServiceReview = () => {
   const reviews = useLoaderData();
+  // const { loading } = useContext(AuthContext);
 
+  const { isLoading, refetch } = useQuery({});
   const handleDelete = (id) => {
-    console.log(id);
     fetch(`https://photography-server-jade.vercel.app/reviews/${id}`, {
       method: "DELETE",
     })
@@ -14,29 +18,21 @@ const ServiceReview = () => {
       .then((data) => {
         console.log(data);
         if (data.deletedCount === 1) {
-          alert("Successfully deleted one document");
-          const remaining = reviews.filter((review) => review._Id !== id);
+          toast.error("Successfully deleted one document");
+          refetch();
+          // const remaining = reviews.filter((review) => review._Id !== id);
         }
       });
   };
 
-  console.log(reviews);
+  // console.log(reviews);
+
+  if (isLoading) {
+    return <div> loading ....</div>;
+  }
   return (
     <div className="overflow-x-auto ">
       <table className="table ">
-        {/* <thead>
-          <tr>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
-            <th>Name</th>
-            <th>Message</th>
-            <th>Rating</th>
-            <th></th>
-          </tr>
-        </thead> */}
         <tbody>
           {reviews.map((review) => (
             <ServiceReviewRaw
